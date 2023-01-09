@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 
 /* routes import */
 import {register} from "./Controllers/auth.js";
+import authRoutes from "./routes/auth.js";
 
 
 /* CONFIGURATIONS */
@@ -43,7 +44,8 @@ const upload = multer({storage});
 
 /* Routes */
 
-app.post("/auth.register", upload.single("picture"), register);
+app.post("/auth/register", upload.single("picture"), register);
+app.use("/auth", authRoutes);
 
 /* Mongoose connection */
 const PORT = process.env.PORT || 6000;
@@ -60,3 +62,5 @@ mongoose.connect(process.env.MONGO_URL,{
 .catch((error) => console.log(`${error} did not connect`));
 
 console.log(`Server running at port ${PORT}`);
+
+export default app;
