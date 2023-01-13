@@ -1,9 +1,11 @@
+import { Box } from "@mui/system";
+import Navbar from "../navbar/index.jsx";
 
 const HomePage = () => {
     return (
-        <div>
-            HomePage
-        </div>
+        <Box>
+            <Navbar />
+        </Box>
     )
 }
 
