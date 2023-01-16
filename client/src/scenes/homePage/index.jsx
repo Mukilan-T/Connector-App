@@ -3,6 +3,8 @@ import { Box } from "@mui/system";
 import { useSelector } from "react-redux";
 import Navbar from "../navbar/index.jsx";
 import UserWidget from "scenes/widgets/UserWidgets.jsx";
+import MyPostWidgets from "scenes/widgets/MyPostWidgets.jsx";
+import PostsWidget from "scenes/widgets/PostsWidget.jsx";
 
 const HomePage = () => {
 
@@ -22,7 +24,8 @@ const HomePage = () => {
                     <UserWidget userId={_id} picturePath={picturePath} />
                 </Box>
                 <Box  flexBasis={isNonMobileScreens? "42%" : undefined} mt={isNonMobileScreens? undefined:"2rem"} >
-
+                    <MyPostWidgets picturePath={picturePath}/>
+                    <PostsWidget userId={_id} />
                 </Box>
                 {isNonMobileScreens && (
                     <Box flexBasis="26%">
