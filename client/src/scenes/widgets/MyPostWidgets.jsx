@@ -26,7 +26,7 @@ const MyPostWidgets = ({picturePath}) => {
         formData.append("description", post);
         if(image) {
             formData.append("picture", image);
-            formData.append("picturePath", picturePath);
+            formData.append("picturePath", image.name);
         }
         const response = await fetch(`http://localhost:3001/posts`, {
             method: "POST",
